@@ -1,17 +1,15 @@
 import React, { createContext, useContext, useState } from "react";
-
 const ResultContext = createContext();
-const baseUrl = "https://g-search.p.rapidapi.com/search";
+const baseUrl = "https://g-search.p.rapidapi.com/search?q=";
 
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const getResults = async (type) => {
+  const getResults = async (query) => {
     setIsLoading(true);
-
-    const response = await fetch(`${baseUrl}${type}`, {
+    const response = await fetch(`${baseUrl}${query}`, {
       method: "GET",
       headers: {
         "X-RapidAPI-Key": process.env.REACT_APP_RAPID_API_KEY,
