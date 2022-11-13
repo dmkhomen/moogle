@@ -9,11 +9,11 @@ export const Navbar = ({darkTheme, setDarkTheme}) => {
         <div className="flex justify-between items-center space-x-5 w-screen">
             <Link to="/">
                 <p className="text-2xl bg-blue-500 font-bold text-white py-1 px-2 rounded dark:bg-gray-500 dark:text-gray-900">
-                    Moogle 
+                🐄 Moogle 
                 </p>
             </Link>
-            <button type="button" onClick={() => {setDarkTheme(!darkTheme)}} className="text-xl dark:bg-gray-50 dark:text-gray-900 bg-white border rounded-full px-2 py-1 hover:shadow-lg">
-                {darkTheme ? "Light" : "Dark"}
+            <button type="button" onClick={() => {setDarkTheme(!darkTheme)}} className="text-xl dark:bg-gray-700 dark:text-gray-200 bg-white   rounded-full px-1 py-1 hover:bg-gray-200 dark:hover:bg-gray-500">
+                {darkTheme ? "🌒" : "☀️"}
             </button>
         </div>
         <Search />
