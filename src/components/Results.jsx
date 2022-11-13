@@ -10,7 +10,22 @@ export const Results = () => {
 
   if (isLoading) return <Loading />
 
-  return (
-    <div>Results</div>
-  )
+  console.log(location.pathname);
+
+  switch (location.pathname) {
+    case "/search":
+      return 'SEARCH';
+    case "/news":
+      return 'NEWS';
+    case "/images":
+      return 'IMAGES';
+    case "/videos":
+      return 'VIDEOS';
+  
+    default:
+      return "ERROR";
+  }
+
+
+  
 }
